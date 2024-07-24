@@ -11,7 +11,7 @@
 \geometry{left=1.05in,right=1.05in,top=1.05in,bottom=1.05in}
 
 % Define fields (\author and \title are defined in the report class)
-\def\department   #1{\gdef\@department   {#1}}
+\def\program      #1{\gdef\@program   {#1}}
 \def\submitdate   #1{\gdef\@submitdate   {#1}}
 \def\copyrightyear#1{\gdef\@copyrightyear{#1}}
 \def\advisor      #1{\gdef\@advisor      {#1}}
@@ -20,7 +20,7 @@
 % Set field default values
 \def\@title        {(title)}
 \def\@author       {(author)}
-\def\@department   {(department)}
+\def\@program      {(program)}
 \def\@submitdate   {\ifcase\the\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi \space \number\the\year}
 \def\@copyrightyear{\number\the\year}
 \def\@advisor      {(advisor)}
@@ -56,7 +56,7 @@
     in Candidacy for the Degree of \\
     Master of Science \\
     in \\
-    \@department
+    \@program
     \vfill
     Lehigh University \\
     \@submitdate \\
@@ -81,7 +81,7 @@
 % Signatures
 %************
 \def\signaturepage{
-  This thesis is approved and recommended for acceptance as a thesis in partial fulfillment of the requirements for the degree of Master of Science.
+  This thesis is approved and recommended for acceptance as a thesis in partial fulfillment of the requirements for the degree of Master of Science in \@program.
   \vfill
   \signature{Date}
   \vfill
