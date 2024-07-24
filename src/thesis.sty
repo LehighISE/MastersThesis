@@ -2,7 +2,7 @@
 % Preamble
 %**********
 % Require setspace and geometry packages
-\RequirePackage{setspace,geometry}
+\RequirePackage{fancyhdr,setspace,geometry}
 
 % Set spacing
 \doublespacing
@@ -130,7 +130,12 @@
     \newpage
   \fi
   \pagenumbering{arabic}
-  \pagestyle{headings}
+  \fancyhf{}
+  \pagestyle{fancy}
+  \fancyhead{}
+  \fancyfoot{}
+  \renewcommand{\headrulewidth}{0.0pt}
+  \fancyfoot[C]{\thepage}  % Center page numbers on bottom of page.
 }
 
 %**********
