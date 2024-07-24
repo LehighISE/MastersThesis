@@ -15,11 +15,7 @@
 \def\submitdate   #1{\gdef\@submitdate   {#1}}
 \def\copyrightyear#1{\gdef\@copyrightyear{#1}}
 \def\advisor      #1{\gdef\@advisor      {#1}}
-\def\secondmember #1{\gdef\@secondmember {#1}}
-\def\thirdmember  #1{\gdef\@thirdmember  {#1}}
-\def\fourthmember #1{\gdef\@fourthmember {#1}}
-\def\fifthmember  #1{\gdef\@fifthmember  {#1}}
-\def\sixthmember  #1{\gdef\@sixthmember  {#1}}
+\def\isechair     #1{\gdef\@isechair     {#1}}
 
 % Set field default values
 \def\@title        {(title)}
@@ -28,23 +24,13 @@
 \def\@submitdate   {\ifcase\the\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi \space \number\the\year}
 \def\@copyrightyear{\number\the\year}
 \def\@advisor      {(advisor)}
-\def\@secondmember {(committee member)}
-\def\@thirdmember  {(committee member)}
-\def\@fourthmember {(committee member)}
-\def\@fifthmember  {(committee member)}
-\def\@sixthmember  {(committee member)}
+\def\@isechair     {(chair)}
 
 % Define ifs
-\newif\iffourthmember
-\newif\iffifthmember
-\newif\ifsixthmember
 \newif\iffigurespage
 \newif\iftablespage
 
 % Set if defaults
-\fourthmembertrue
-\fifthmembertrue
-\sixthmembertrue
 \figurespagetrue
 \tablespagetrue
 
@@ -95,37 +81,14 @@
 % Signatures
 %************
 \def\signaturepage{
-  Approved and recommended for acceptance as a thesis in partial fulfillment of the requirements for the degree of Doctor of Philosophy.
+  This thesis is approved and recommended for acceptance as a thesis in partial fulfillment of the requirements for the degree of Master of Science.
   \vfill
   \signature{Date}
   \vfill
-  \signature{Thesis Advisor}
+  \signature{\@advisor, Thesis Advisor}
   \vfill
-  Committee Members:
+  \signature{\@isechair, Department Chair}
   \vfill
-  \signature{\@advisor, Committee Chair}
-  \vfill
-  \signature\@secondmember
-  \vfill
-  \signature\@thirdmember
-  \iffourthmember
-    \vfill
-    \signature\@fourthmember
-  \else
-    \vspace{0.5in}
-  \fi
-  \iffifthmember
-    \vfill
-    \signature\@fifthmember
-  \else
-    \vspace{0.5in}
-  \fi
-  \ifsixthmember
-    \vfill
-    \signature\@sixthmember
-  \else
-    \vspace{0.5in}
-  \fi
   \newpage
 }
 
